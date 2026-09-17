@@ -1,36 +1,22 @@
 /* ==========================================================================
    Amy Marino Realty — Coldwell Banker Realty
    Design direction: editorial, dark sophisticated hero, restrained palette,
-   Lora (display serif) + Work Sans (body/UI), single accent color.
+   Bricolage Grotesque (display) + Work Sans (body/UI), single accent color.
    ========================================================================== */
 
 /* -- Fonts (self-hosted, OFL-licensed; see assets/fonts/*-OFL.txt) -- */
 @font-face {
-  font-family: "Lora";
-  src: url("../fonts/Lora-Regular.ttf") format("truetype");
+  font-family: "Bricolage Grotesque";
+  src: url("../fonts/BricolageGrotesque-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Lora";
-  src: url("../fonts/Lora-Italic.ttf") format("truetype");
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Lora";
-  src: url("../fonts/Lora-Bold.ttf") format("truetype");
+  font-family: "Bricolage Grotesque";
+  src: url("../fonts/BricolageGrotesque-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Lora";
-  src: url("../fonts/Lora-BoldItalic.ttf") format("truetype");
-  font-weight: 700;
-  font-style: italic;
   font-display: swap;
 }
 @font-face {
@@ -79,12 +65,12 @@
   --accent-hover: #163a6f;
 
   /* type */
-  --font-display: "Lora", Georgia, "Times New Roman", serif;
+  --font-display: "Bricolage Grotesque", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-body: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   /* shape */
   --radius-card: 16px;
-  --radius-pill: 999px;
+  --radius-btn: 0;
 
   /* spacing */
   --gutter: clamp(1.25rem, 4vw, 3rem);
@@ -177,7 +163,7 @@ p {
   background: var(--ink);
   color: var(--text-on-ink);
   padding: 0.75rem 1.25rem;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-btn);
   z-index: 100;
   transition: top 0.2s var(--ease);
 }
@@ -190,7 +176,7 @@ p {
   outline-offset: 3px;
 }
 
-/* -- Buttons (one shape: pill) -- */
+/* -- Buttons (one shape: sharp corners) -- */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -200,7 +186,7 @@ p {
   font-weight: 600;
   font-size: 0.95rem;
   padding: 0.9rem 1.75rem;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-btn);
   border: 1px solid transparent;
   text-decoration: none;
   white-space: nowrap;
@@ -314,7 +300,7 @@ p {
   height: 44px;
   background: transparent;
   border: 1px solid var(--ink-border);
-  border-radius: 10px;
+  border-radius: var(--radius-btn);
   color: var(--text-on-ink);
   cursor: pointer;
 }
@@ -396,7 +382,7 @@ p {
   letter-spacing: -0.01em;
 }
 .hero-headline em {
-  font-style: italic;
+  font-style: normal;
   color: #cfe0f7;
 }
 .hero-sub {
@@ -806,7 +792,7 @@ p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
+  border-radius: var(--radius-btn);
   border: 1px solid var(--paper-border);
   background: transparent;
   color: var(--text-on-paper);
