@@ -660,8 +660,13 @@ p {
 }
 @media (min-width: 900px) {
   .contact-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: start;
   }
+}
+.contact-side {
+  display: grid;
+  gap: 1.5rem;
 }
 .contact-card {
   border: 1px solid var(--paper-border);
@@ -783,6 +788,8 @@ p {
   padding: clamp(1.75rem, 4vw, 2.75rem);
   max-width: 440px;
   width: calc(100% - 2.5rem);
+  max-height: min(720px, calc(100vh - 3rem));
+  overflow-y: auto;
   background: var(--paper);
   color: var(--text-on-paper);
   box-shadow: 0 24px 60px rgba(14, 22, 32, 0.28);
@@ -826,4 +833,84 @@ p {
 }
 .inquiry-dialog .btn {
   width: 100%;
+}
+.inquiry-alt {
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--paper-border);
+}
+.inquiry-alt p {
+  font-size: 0.9rem;
+  color: var(--text-muted-on-paper);
+  margin-bottom: 0.9rem;
+}
+
+/* -- Inquiry / contact forms (shared by dialog + Contact section) -- */
+.inquiry-form {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1.1rem;
+}
+.form-field {
+  display: grid;
+  gap: 0.4rem;
+}
+.form-field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-on-paper);
+}
+.form-field .optional {
+  font-weight: 400;
+  color: var(--text-muted-on-paper);
+}
+.form-field input,
+.form-field textarea {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid var(--paper-border);
+  background: var(--paper);
+  color: var(--text-on-paper);
+  resize: vertical;
+  min-height: 44px;
+}
+.form-field textarea {
+  min-height: 100px;
+}
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: var(--text-muted-on-paper);
+}
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
+.inquiry-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.inquiry-submit {
+  width: 100%;
+}
+.inquiry-status {
+  margin: 0;
+  font-size: 0.9rem;
+  min-height: 1.3em;
+}
+.inquiry-status.is-success {
+  color: #1f7a4d;
+}
+.inquiry-status.is-error {
+  color: #a3312a;
+}
+.inquiry-status.is-error a {
+  color: inherit;
+  text-decoration: underline;
 }

@@ -247,39 +247,71 @@
       <div class="container">
         <div class="section-head">
           <h2 class="section-title">Contact Amy</h2>
-          <p class="section-lede">Reach out by phone or email &mdash; both go directly to Amy.</p>
+          <p class="section-lede">Send an inquiry below, or reach out by phone or email &mdash; all go directly to Amy.</p>
         </div>
 
         <div class="contact-grid">
-          <div class="contact-card">
-            <h3>Direct contact</h3>
-            <ul class="contact-links">
-              <li>
-                <a href="tel:19149669494">
-                  Cell &mdash; (914) 966-9494
-                </a>
-              </li>
-              <li>
-                <a href="tel:19149970097">
-                  Office &mdash; (914) 997-0097
-                </a>
-              </li>
-              <li>
-                <a href="mailto:amy.marino@cbrealty.com">
-                  amy.marino@cbrealty.com
-                </a>
-              </li>
-            </ul>
+          <div class="contact-card contact-form-card">
+            <h3>Send an inquiry</h3>
+            <form class="inquiry-form" data-inquiry-form action="https://formsubmit.co/ajax/amy.marino@cbrealty.com" method="POST">
+              <input type="hidden" name="_subject" value="New inquiry from AmyMarinoRealty.com" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="text" name="_honey" class="inquiry-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+              <div class="form-field">
+                <label for="contactName">Name</label>
+                <input type="text" id="contactName" name="name" required autocomplete="name" />
+              </div>
+              <div class="form-field">
+                <label for="contactPhone">Phone number</label>
+                <input type="tel" id="contactPhone" name="phone" required autocomplete="tel" />
+              </div>
+              <div class="form-field">
+                <label for="contactAddress">Property address <span class="optional">(optional)</span></label>
+                <input type="text" id="contactAddress" name="address" autocomplete="street-address" />
+              </div>
+              <div class="form-field">
+                <label for="contactMessage">Your inquiry</label>
+                <textarea id="contactMessage" name="message" rows="4" required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary inquiry-submit">Send Inquiry</button>
+              <p class="inquiry-status" role="status" aria-live="polite"></p>
+            </form>
           </div>
 
-          <div class="contact-card">
-            <h3>Office</h3>
-            <p class="contact-office">
-              Coldwell Banker Realty<br />
-              278 Mamaroneck Ave<br />
-              White Plains, NY 10605
-            </p>
-            <p class="contact-office">NY License #10401350070</p>
+          <div class="contact-side">
+            <div class="contact-card">
+              <h3>Direct contact</h3>
+              <ul class="contact-links">
+                <li>
+                  <a href="tel:19149669494">
+                    Cell &mdash; (914) 966-9494
+                  </a>
+                </li>
+                <li>
+                  <a href="tel:19149970097">
+                    Office &mdash; (914) 997-0097
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:amy.marino@cbrealty.com">
+                    amy.marino@cbrealty.com
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="contact-card">
+              <h3>Office</h3>
+              <p class="contact-office">
+                Coldwell Banker Realty<br />
+                278 Mamaroneck Ave<br />
+                White Plains, NY 10605
+              </p>
+              <p class="contact-office">NY License #10401350070</p>
+            </div>
           </div>
         </div>
       </div>
@@ -324,9 +356,40 @@
     <button type="button" class="inquiry-close" id="inquiryClose" aria-label="Close">&times;</button>
     <h2 id="inquiryTitle" class="inquiry-title"></h2>
     <p id="inquiryBody" class="inquiry-body"></p>
-    <div class="hero-ctas">
-      <a id="inquiryCall" class="btn btn-primary" href="tel:19149669494">Call Amy &mdash; (914) 966-9494</a>
-      <a id="inquiryEmail" class="btn btn-outline" href="mailto:amy.marino@cbrealty.com">Email Amy</a>
+
+    <form class="inquiry-form" data-inquiry-form action="https://formsubmit.co/ajax/amy.marino@cbrealty.com" method="POST">
+      <input type="hidden" name="_subject" value="New inquiry from AmyMarinoRealty.com" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="text" name="_honey" class="inquiry-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+      <div class="form-field">
+        <label for="inquiryName">Name</label>
+        <input type="text" id="inquiryName" name="name" required autocomplete="name" />
+      </div>
+      <div class="form-field">
+        <label for="inquiryPhone">Phone number</label>
+        <input type="tel" id="inquiryPhone" name="phone" required autocomplete="tel" />
+      </div>
+      <div class="form-field">
+        <label for="inquiryAddress">Property address <span class="optional">(optional)</span></label>
+        <input type="text" id="inquiryAddress" name="address" autocomplete="street-address" />
+      </div>
+      <div class="form-field">
+        <label for="inquiryMessage">Your inquiry</label>
+        <textarea id="inquiryMessage" name="message" rows="4" required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary inquiry-submit">Send Inquiry</button>
+      <p class="inquiry-status" role="status" aria-live="polite"></p>
+    </form>
+
+    <div class="inquiry-alt">
+      <p>Prefer to reach Amy directly?</p>
+      <div class="hero-ctas">
+        <a id="inquiryCall" class="btn btn-outline" href="tel:19149669494">Call &mdash; (914) 966-9494</a>
+        <a id="inquiryEmail" class="btn btn-outline" href="mailto:amy.marino@cbrealty.com">Email Amy</a>
+      </div>
     </div>
   </dialog>
 
