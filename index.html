@@ -90,10 +90,11 @@
       <div class="container hero-grid">
         <div>
           <h1 class="hero-headline">Buying or selling in <em>Westchester</em> and Rockland County</h1>
-          <p class="hero-sub">Amy Marino is a REALTOR with Coldwell Banker Realty, working with buyers and sellers throughout Westchester County and parts of Rockland County from the White Plains office.</p>
-          <div class="hero-ctas">
-            <a class="btn btn-primary" href="tel:19149669494">Call Amy &mdash; (914) 966-9494</a>
-            <a class="btn btn-ghost-light" href="mailto:amy.marino@cbrealty.com">Email Amy</a>
+          <p class="hero-sub">Amy Marino is a REALTOR with Coldwell Banker Realty, born and raised in New Rochelle and serving buyers and sellers throughout Westchester County and parts of Rockland County.</p>
+          <div class="hero-ctas hero-actions">
+            <button type="button" class="btn btn-primary" data-inquiry="buy">Buy a Home</button>
+            <button type="button" class="btn btn-primary" data-inquiry="sell">Sell My Home</button>
+            <button type="button" class="btn btn-ghost-light" data-inquiry="value">Find My Home&rsquo;s Value</button>
           </div>
         </div>
 
@@ -112,16 +113,20 @@
       <div class="container about-single">
         <div class="about-copy">
           <h2 class="section-title">About Amy</h2>
-          <p>Amy Marino is a REALTOR with Coldwell Banker Realty, working with buyers and sellers throughout Westchester County and parts of Rockland County. She is based out of the Coldwell Banker Realty office at 278 Mamaroneck Ave in White Plains, New York.</p>
+          <p>Amy Marino is a REALTOR with Coldwell Banker Realty. Born and raised in New Rochelle, she still calls it home today, and proudly serves New Rochelle and its neighboring Westchester County communities.</p>
+          <p>Amy began her career in real estate five years ago and has earned more than $13 million in sales since. She graduated from Katharine Gibbs Business School with an Options Business Degree, which launched her career in the corporate world &mdash; experience that continues to shape the level of service she brings to every real estate client and customer.</p>
+          <p>As a real estate professional, Amy is motivated, personable, compassionate, outgoing, hardworking, honest, trustworthy, loyal, and patient, as well as a strong negotiator, dedicated to fulfilling all of her clients' real estate needs.</p>
+          <p>Amy brings a genuine passion for people and a thorough understanding of the real estate market to every client relationship. Guided by her fiduciary duty, her approach centers on listening closely to her clients' priorities: crafting targeted marketing plans and pricing strategy for sellers, and identifying the neighborhoods and properties that best match her buyers' lifestyles and budgets. Her goal is to educate her clients at every step, stay in constant, clear communication, and work to maximize value, minimize stress, and get every deal to the closing table.</p>
 
           <dl class="about-facts">
             <div><dt>Title:</dt> <dd>REALTOR, Real Estate Salesperson</dd></div>
             <div><dt>Brokerage:</dt> <dd>Coldwell Banker Realty</dd></div>
+            <div><dt>Hometown:</dt> <dd>New Rochelle, NY</dd></div>
             <div><dt>Office:</dt> <dd>278 Mamaroneck Ave, White Plains, NY 10605</dd></div>
             <div><dt>License #:</dt> <dd>10401350070</dd></div>
           </dl>
 
-          <p class="about-note">A fuller introduction from Amy, including her background and approach to working with clients, is coming soon.</p>
+          <p class="about-note">Amy looks forward to working with you.</p>
         </div>
       </div>
     </section>
@@ -144,7 +149,7 @@
               <li>Offer and negotiation support</li>
               <li>Coordination through closing</li>
             </ul>
-            <a class="btn btn-outline" href="mailto:amy.marino@cbrealty.com">Email Amy</a>
+            <button type="button" class="btn btn-outline" data-inquiry="buy">Buy a Home</button>
           </article>
 
           <article class="service-panel" id="sellers">
@@ -156,7 +161,7 @@
               <li>Marketing your property</li>
               <li>Negotiation through closing</li>
             </ul>
-            <a class="btn btn-outline" href="mailto:amy.marino@cbrealty.com">Email Amy</a>
+            <button type="button" class="btn btn-outline" data-inquiry="sell">Sell My Home</button>
           </article>
         </div>
       </div>
@@ -315,6 +320,17 @@
       <span class="eq-housing">Equal Housing Opportunity</span>
     </div>
   </footer>
+
+  <!-- ============ INQUIRY DIALOG ============ -->
+  <dialog id="inquiryDialog" class="inquiry-dialog" aria-labelledby="inquiryTitle">
+    <button type="button" class="inquiry-close" id="inquiryClose" aria-label="Close">&times;</button>
+    <h2 id="inquiryTitle" class="inquiry-title"></h2>
+    <p id="inquiryBody" class="inquiry-body"></p>
+    <div class="hero-ctas">
+      <a id="inquiryCall" class="btn btn-primary" href="tel:19149669494">Call Amy &mdash; (914) 966-9494</a>
+      <a id="inquiryEmail" class="btn btn-outline" href="mailto:amy.marino@cbrealty.com">Email Amy</a>
+    </div>
+  </dialog>
 
   <script src="assets/js/main.js"></script>
 </body>
