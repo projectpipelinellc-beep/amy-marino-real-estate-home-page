@@ -51,16 +51,16 @@
 /* -- Design tokens -- */
 :root {
   /* color */
-  --ink: #0e1620;
-  --ink-elevated: #17222f;
-  --ink-border: #2a3745;
+  --ink: #1a5296;
+  --ink-elevated: #123f78;
+  --ink-border: #3f76b8;
   --paper: #f5f6f7;
   --paper-alt: #eceef1;
   --paper-border: #d8dce1;
   --text-on-paper: #1a222c;
   --text-muted-on-paper: #4b5563;
   --text-on-ink: #f2f4f6;
-  --text-muted-on-ink: #9aa7b4;
+  --text-muted-on-ink: #c9d3e0;
   --accent: #1e4b8f;
   --accent-hover: #163a6f;
 
@@ -200,6 +200,7 @@ p {
 .btn-primary {
   background: var(--accent);
   color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
 }
 .btn-primary:hover {
   background: var(--accent-hover);
