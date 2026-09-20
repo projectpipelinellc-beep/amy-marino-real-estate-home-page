@@ -177,11 +177,49 @@
     });
   });
 
-  /* -- Homepage listing grid, rendered from data/listings.json -- */
+  /* -- Homepage listing grids, rendered from data/listings.json -- */
   var listingGrid = document.getElementById("listingGrid");
+  var pastSalesGrid = document.getElementById("pastSalesGrid");
   var listingEmptyState = document.getElementById("listingEmptyState");
+  var SOLD_STATUSES = ["sold", "off market", "off-market"];
 
-  if (listingGrid) {
+  function formatListingPrice(listing) {
+    if (listing.priceDisplay) return listing.priceDisplay;
+    if (typeof listing.price === "number") {
+      return new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+        maximumFractionDigits: 0
+      }).format(listing.price);
+    }
+    return "Price upon request";
+  }
+
+  function renderListingTile(listing) {
+    var image = listing.images && listing.images[0];
+    var price = formatListingPrice(listing);
+    var addressLine = [listing.address, listing.city, listing.state].filter(Boolean).join(", ");
+    var metaParts = [];
+    if (listing.beds != null) metaParts.push(listing.beds + " bd");
+    if (listing.baths != null) metaParts.push(listing.baths + " ba");
+    if (listing.sqft != null) metaParts.push(listing.sqft.toLocaleString() + " sq ft");
+
+    return (
+      '<a class="listing-tile" href="listings/' + listing.slug + '/index.html">' +
+      '<div class="listing-tile-media">' +
+      (image ? '<img src="' + image + '" alt="' + (addressLine || "Property photo") + '" loading="lazy" />' : "") +
+      (listing.status ? '<span class="listing-tile-status">' + listing.status + "</span>" : "") +
+      "</div>" +
+      '<div class="listing-tile-body">' +
+      '<p class="listing-tile-price">' + price + "</p>" +
+      '<p class="listing-tile-address">' + addressLine + "</p>" +
+      (metaParts.length ? '<p class="listing-tile-meta">' + metaParts.join(" · ") + "</p>" : "") +
+      "</div>" +
+      "</a>"
+    );
+  }
+
+  if (listingGrid || pastSalesGrid) {
     fetch("data/listings.json")
       .then(function (res) {
         if (!res.ok) throw new Error("listings.json not found");
@@ -190,42 +228,23 @@
       .then(function (listings) {
         if (!Array.isArray(listings) || listings.length === 0) return;
 
-        var formatter = new Intl.NumberFormat("en-US", {
-          style: "currency",
-          currency: "USD",
-          maximumFractionDigits: 0
+        var active = [];
+        var sold = [];
+        listings.forEach(function (listing) {
+          var isSold = SOLD_STATUSES.indexOf(String(listing.status || "").toLowerCase()) !== -1;
+          (isSold ? sold : active).push(listing);
         });
 
-        listingGrid.innerHTML = listings
-          .map(function (listing) {
-            var image = listing.images && listing.images[0];
-            var price = typeof listing.price === "number" ? formatter.format(listing.price) : "Price upon request";
-            var addressLine = [listing.address, listing.city, listing.state]
-              .filter(Boolean)
-              .join(", ");
-            var metaParts = [];
-            if (listing.beds != null) metaParts.push(listing.beds + " bd");
-            if (listing.baths != null) metaParts.push(listing.baths + " ba");
-            if (listing.sqft != null) metaParts.push(listing.sqft.toLocaleString() + " sq ft");
+        if (listingGrid && active.length) {
+          listingGrid.innerHTML = active.map(renderListingTile).join("");
+          listingGrid.hidden = false;
+          if (listingEmptyState) listingEmptyState.hidden = true;
+        }
 
-            return (
-              '<a class="listing-tile" href="listings/' + listing.slug + '/index.html">' +
-              '<div class="listing-tile-media">' +
-              (image ? '<img src="' + image + '" alt="' + (addressLine || "Property photo") + '" loading="lazy" />' : "") +
-              (listing.status ? '<span class="listing-tile-status">' + listing.status + "</span>" : "") +
-              "</div>" +
-              '<div class="listing-tile-body">' +
-              '<p class="listing-tile-price">' + price + "</p>" +
-              '<p class="listing-tile-address">' + addressLine + "</p>" +
-              (metaParts.length ? '<p class="listing-tile-meta">' + metaParts.join(" · ") + "</p>" : "") +
-              "</div>" +
-              "</a>"
-            );
-          })
-          .join("");
-
-        listingGrid.hidden = false;
-        if (listingEmptyState) listingEmptyState.hidden = true;
+        if (pastSalesGrid && sold.length) {
+          pastSalesGrid.innerHTML = sold.map(renderListingTile).join("");
+          pastSalesGrid.hidden = false;
+        }
       })
       .catch(function () {
         // No listings.json reachable (e.g. viewing the file directly without a

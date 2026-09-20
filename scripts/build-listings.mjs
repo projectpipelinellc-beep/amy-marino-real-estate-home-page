@@ -30,13 +30,20 @@ function escapeHtml(str) {
     .replace(/"/g, "&quot;");
 }
 
-function formatPrice(price) {
-  if (typeof price !== "number") return "Price upon request";
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    maximumFractionDigits: 0
-  }).format(price);
+function formatPrice(listing) {
+  if (listing.priceDisplay) return listing.priceDisplay;
+  if (typeof listing.price === "number") {
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      maximumFractionDigits: 0
+    }).format(listing.price);
+  }
+  return "Price upon request";
+}
+
+function isSold(listing) {
+  return ["sold", "off market", "off-market"].includes(String(listing.status || "").toLowerCase());
 }
 
 function addressLine(listing) {
@@ -60,6 +67,10 @@ function factsList(listing) {
   if (listing.beds != null) facts.push(["Bedrooms", listing.beds]);
   if (listing.baths != null) facts.push(["Bathrooms", listing.baths]);
   if (listing.sqft != null) facts.push(["Square Feet", Number(listing.sqft).toLocaleString()]);
+  if (listing.yearBuilt != null) facts.push(["Year Built", listing.yearBuilt]);
+  if (listing.lot) facts.push(["Lot Size", listing.lot]);
+  if (listing.hoaMonthly != null) facts.push(["HOA", `$${Number(listing.hoaMonthly).toLocaleString()}/mo`]);
+  if (listing.availability) facts.push(["Availability", listing.availability]);
   if (listing.status) facts.push(["Status", listing.status]);
   if (listing.mlsNumber) facts.push(["MLS #", listing.mlsNumber]);
   return facts;
@@ -169,7 +180,7 @@ function renderPage(listing) {
     <section class="listing-hero">
       <div class="container">
         ${listing.status ? `<span class="listing-hero-status">${escapeHtml(listing.status)}</span>` : ""}
-        <h1 class="listing-hero-price">${formatPrice(listing.price)}</h1>
+        <h1 class="listing-hero-price">${formatPrice(listing)}</h1>
         <p class="listing-hero-address">${escapeHtml(addr)}</p>
         ${meta.length ? `<p class="listing-hero-meta">${meta.map(escapeHtml).join(" &middot; ")}</p>` : ""}
       </div>
@@ -190,16 +201,25 @@ function renderPage(listing) {
           ${listing.description ? `<p>${escapeHtml(listing.description)}</p>` : ""}
           ${factsMarkup(listing)}
           ${featuresMarkup(listing)}
+          ${listing.photoNote ? `<p class="listing-source-note">${escapeHtml(listing.photoNote)}</p>` : ""}
           ${listing.sourceUrl ? `<p class="listing-source-note">Originally listed at <a href="${escapeHtml(listing.sourceUrl)}" target="_blank" rel="noopener">${escapeHtml(listing.sourceUrl)}</a></p>` : ""}
         </div>
 
         <div class="listing-cta-panel">
-          <h3>Interested in this home?</h3>
+          ${isSold(listing)
+            ? `<h3>This home has sold</h3>
+          <p>Interested in something similar? Amy can help you find comparable homes.</p>
+          <div class="hero-ctas">
+            <button type="button" class="btn btn-primary" data-inquiry="buy">Find a Similar Home</button>
+            <a class="btn btn-outline" href="tel:19149669494">Call Amy</a>
+            <a class="btn btn-outline" href="mailto:amy.marino@cbrealty.com">Email Amy</a>
+          </div>`
+            : `<h3>Interested in this home?</h3>
           <div class="hero-ctas">
             <button type="button" class="btn btn-primary" data-inquiry="showing" data-address="${addrAttr}">Schedule a Showing</button>
             <a class="btn btn-outline" href="tel:19149669494">Call Amy</a>
             <a class="btn btn-outline" href="mailto:amy.marino@cbrealty.com">Email Amy</a>
-          </div>
+          </div>`}
         </div>
       </div>
     </section>
