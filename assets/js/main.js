@@ -54,8 +54,17 @@
   var dialogClose = document.getElementById("inquiryClose");
   var supportsDialog = dialog && typeof dialog.showModal === "function";
 
-  function openInquiry(kind) {
-    var content = INQUIRY_CONTENT[kind] || INQUIRY_CONTENT.buy;
+  function openInquiry(kind, address) {
+    var content;
+    if (kind === "showing" && address) {
+      content = {
+        title: "Schedule a showing",
+        intro: "Let Amy know when you’d like to see " + address + " in person.",
+        prefill: "I’d like to schedule a showing for " + address + "."
+      };
+    } else {
+      content = INQUIRY_CONTENT[kind] || INQUIRY_CONTENT.buy;
+    }
     var mailtoHref = "mailto:" + EMAIL + "?subject=" + encodeURIComponent(content.prefill);
 
     if (!supportsDialog) {
@@ -76,7 +85,7 @@
 
   document.querySelectorAll("[data-inquiry]").forEach(function (btn) {
     btn.addEventListener("click", function () {
-      openInquiry(btn.getAttribute("data-inquiry"));
+      openInquiry(btn.getAttribute("data-inquiry"), btn.getAttribute("data-address"));
     });
   });
 
@@ -167,4 +176,102 @@
         });
     });
   });
+
+  /* -- Homepage listing grid, rendered from data/listings.json -- */
+  var listingGrid = document.getElementById("listingGrid");
+  var listingEmptyState = document.getElementById("listingEmptyState");
+
+  if (listingGrid) {
+    fetch("data/listings.json")
+      .then(function (res) {
+        if (!res.ok) throw new Error("listings.json not found");
+        return res.json();
+      })
+      .then(function (listings) {
+        if (!Array.isArray(listings) || listings.length === 0) return;
+
+        var formatter = new Intl.NumberFormat("en-US", {
+          style: "currency",
+          currency: "USD",
+          maximumFractionDigits: 0
+        });
+
+        listingGrid.innerHTML = listings
+          .map(function (listing) {
+            var image = listing.images && listing.images[0];
+            var price = typeof listing.price === "number" ? formatter.format(listing.price) : "Price upon request";
+            var addressLine = [listing.address, listing.city, listing.state]
+              .filter(Boolean)
+              .join(", ");
+            var metaParts = [];
+            if (listing.beds != null) metaParts.push(listing.beds + " bd");
+            if (listing.baths != null) metaParts.push(listing.baths + " ba");
+            if (listing.sqft != null) metaParts.push(listing.sqft.toLocaleString() + " sq ft");
+
+            return (
+              '<a class="listing-tile" href="listings/' + listing.slug + '/index.html">' +
+              '<div class="listing-tile-media">' +
+              (image ? '<img src="' + image + '" alt="' + (addressLine || "Property photo") + '" loading="lazy" />' : "") +
+              (listing.status ? '<span class="listing-tile-status">' + listing.status + "</span>" : "") +
+              "</div>" +
+              '<div class="listing-tile-body">' +
+              '<p class="listing-tile-price">' + price + "</p>" +
+              '<p class="listing-tile-address">' + addressLine + "</p>" +
+              (metaParts.length ? '<p class="listing-tile-meta">' + metaParts.join(" · ") + "</p>" : "") +
+              "</div>" +
+              "</a>"
+            );
+          })
+          .join("");
+
+        listingGrid.hidden = false;
+        if (listingEmptyState) listingEmptyState.hidden = true;
+      })
+      .catch(function () {
+        // No listings.json reachable (e.g. viewing the file directly without a
+        // server) — leave the existing empty-state CTA showing as-is.
+      });
+  }
+
+  /* -- Property gallery lightbox (detail pages) -- */
+  var galleryButtons = Array.prototype.slice.call(document.querySelectorAll(".listing-gallery-item"));
+  var lightbox = document.getElementById("propertyLightbox");
+
+  if (galleryButtons.length && lightbox && typeof lightbox.showModal === "function") {
+    var lightboxImg = lightbox.querySelector(".lightbox-frame img");
+    var lightboxCounter = lightbox.querySelector(".lightbox-counter");
+    var lightboxClose = lightbox.querySelector(".lightbox-close");
+    var lightboxPrev = lightbox.querySelector(".lightbox-prev");
+    var lightboxNext = lightbox.querySelector(".lightbox-next");
+    var images = galleryButtons.map(function (btn) {
+      return { src: btn.getAttribute("data-full") || btn.querySelector("img").src, alt: btn.querySelector("img").alt };
+    });
+    var current = 0;
+
+    function showImage(index) {
+      current = (index + images.length) % images.length;
+      lightboxImg.src = images[current].src;
+      lightboxImg.alt = images[current].alt;
+      lightboxCounter.textContent = current + 1 + " / " + images.length;
+    }
+
+    galleryButtons.forEach(function (btn, i) {
+      btn.addEventListener("click", function () {
+        showImage(i);
+        lightbox.showModal();
+      });
+    });
+
+    if (lightboxClose) lightboxClose.addEventListener("click", function () { lightbox.close(); });
+    if (lightboxPrev) lightboxPrev.addEventListener("click", function () { showImage(current - 1); });
+    if (lightboxNext) lightboxNext.addEventListener("click", function () { showImage(current + 1); });
+
+    lightbox.addEventListener("click", function (event) {
+      if (event.target === lightbox) lightbox.close();
+    });
+    lightbox.addEventListener("keydown", function (event) {
+      if (event.key === "ArrowLeft") showImage(current - 1);
+      if (event.key === "ArrowRight") showImage(current + 1);
+    });
+  }
 })();
