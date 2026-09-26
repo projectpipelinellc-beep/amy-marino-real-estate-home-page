@@ -302,11 +302,19 @@ function renderPage(listing) {
 
   <dialog id="propertyLightbox" class="lightbox" aria-label="Property photo viewer">
     <div class="lightbox-frame">
-      <img src="" alt="" />
-      <button type="button" class="lightbox-prev" aria-label="Previous photo">&#8249;</button>
-      <button type="button" class="lightbox-next" aria-label="Next photo">&#8250;</button>
       <button type="button" class="lightbox-close" aria-label="Close">&times;</button>
-      <span class="lightbox-counter"></span>
+      <div class="lightbox-media">
+        <img src="" alt="" />
+        <button type="button" class="lightbox-prev" aria-label="Previous photo">&#8249;</button>
+        <button type="button" class="lightbox-next" aria-label="Next photo">&#8250;</button>
+        <span class="lightbox-counter"></span>
+      </div>
+      <div class="lightbox-info">
+        <h2 class="lightbox-info-address">${addrAttr}</h2>
+        ${listing.description
+          ? `<p class="lightbox-info-desc">${escapeHtml(listing.description)}</p>`
+          : `<p class="lightbox-info-empty">No description available for this property.</p>`}
+      </div>
     </div>
   </dialog>
 

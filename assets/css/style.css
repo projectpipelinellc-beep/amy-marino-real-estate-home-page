@@ -657,7 +657,9 @@ p {
   }
 }
 .listing-tile {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   text-decoration: none;
   color: inherit;
   border: 1px solid var(--paper-border);
@@ -672,6 +674,7 @@ p {
 }
 .listing-tile-media {
   position: relative;
+  flex: none;
   aspect-ratio: 4 / 3;
   background: var(--paper-alt);
 }
@@ -693,6 +696,10 @@ p {
   padding: 0.35rem 0.65rem;
 }
 .listing-tile-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 1.25rem 1.4rem 1.5rem;
 }
 .listing-tile-price {
@@ -704,6 +711,10 @@ p {
 .listing-tile-address {
   margin: 0.35rem 0 0;
   color: var(--text-on-paper);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 .listing-tile-meta {
   margin: 0.5rem 0 0;
@@ -869,13 +880,62 @@ p {
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: row;
+}
+@media (max-width: 820px) {
+  .lightbox-frame {
+    flex-direction: column;
+  }
+}
+.lightbox-media {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
-.lightbox-frame img {
-  max-width: min(1100px, 92vw);
-  max-height: 86vh;
+.lightbox-media img {
+  max-width: 100%;
+  max-height: 82vh;
   object-fit: contain;
+}
+.lightbox-info {
+  width: 360px;
+  max-width: 100%;
+  flex-shrink: 0;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+@media (max-width: 820px) {
+  .lightbox-info {
+    width: 100%;
+    max-height: 34vh;
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+  }
+}
+.lightbox-info-address {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  margin: 0 0 0.85rem;
+  color: #ffffff;
+}
+.lightbox-info-desc {
+  margin: 0;
+  color: var(--text-muted-on-ink);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+.lightbox-info-empty {
+  margin: 0;
+  color: var(--text-muted-on-ink);
+  font-size: 0.9rem;
+  font-style: italic;
 }
 .lightbox-close,
 .lightbox-prev,
@@ -888,6 +948,7 @@ p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
 }
 .lightbox-close {
   top: 1.25rem;
