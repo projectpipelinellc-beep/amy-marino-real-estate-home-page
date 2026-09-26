@@ -169,9 +169,9 @@
       "Eastchester school district"
     ],
     "images": [
-      "assets/listings/142-brook-st-a-scarsdale-ny/01.svg"
+      "assets/listings/142-brook-st-a-scarsdale-ny/01.jpg"
     ],
-    "photoNote": "The supplied source page exposes Street View rather than a listing gallery; no listing photograph was available to include, so a branded placeholder is shown instead.",
+    "photoNote": "No listing photography was supplied for this property. The exterior photo shown is sourced from Google Street View, not the original listing gallery.",
     "sourceUrl": "https://www.zillow.com/homedetails/142-Brook-St-A-Scarsdale-NY-10583/2101184786_zpid/"
   },
   {
@@ -389,9 +389,9 @@
       "Approximately 0.26-acre lot"
     ],
     "images": [
-      "assets/listings/191-oakland-ave-eastchester-ny/01.svg"
+      "assets/listings/191-oakland-ave-eastchester-ny/01.jpg"
     ],
-    "photoNote": "The supplied source page exposes only Street View and public-record information; no listing photograph was available, so a branded placeholder is shown instead.",
+    "photoNote": "No listing photography was supplied for this property. The exterior photo shown is sourced from Google Street View, not the original listing gallery.",
     "sourceUrl": "https://www.zillow.com/homedetails/191-Oakland-Ave-Eastchester-NY-10709/33015409_zpid/"
   },
   {
@@ -513,9 +513,9 @@
       "Approximately 0.25-acre lot"
     ],
     "images": [
-      "assets/listings/5-meda-pl-white-plains-ny/01.svg"
+      "assets/listings/5-meda-pl-white-plains-ny/01.jpg"
     ],
-    "photoNote": "The supplied source page exposes only Street View and property-record imagery; no listing photograph was available, so a branded placeholder is shown instead.",
+    "photoNote": "No listing photography was supplied for this property. The exterior photo shown is sourced from Google Street View, not the original listing gallery.",
     "sourceUrl": "https://www.realtor.com/realestateandhomes-detail/5-Meda-Pl_White-Plains_NY_10605_M49616-25200"
   }
 ]
