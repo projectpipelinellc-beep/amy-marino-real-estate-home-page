@@ -517,5 +517,136 @@
     ],
     "photoNote": "No listing photography was supplied for this property. The exterior photo shown is sourced from Google Street View, not the original listing gallery.",
     "sourceUrl": "https://www.realtor.com/realestateandhomes-detail/5-Meda-Pl_White-Plains_NY_10605_M49616-25200"
+  },
+  {
+    "id": "93-trenton-ave-white-plains-ny",
+    "slug": "93-trenton-ave-white-plains-ny",
+    "address": "93 Trenton Ave",
+    "city": "White Plains",
+    "state": "NY",
+    "zip": "10606",
+    "status": "Sold",
+    "price": 640000,
+    "priceDisplay": "$640,000",
+    "soldDate": "2022-01-05",
+    "beds": 3,
+    "baths": 2,
+    "sqft": 1692,
+    "propertyType": "Single-family residence",
+    "yearBuilt": 1927,
+    "lot": "4,184 sq ft",
+    "garage": "1 car",
+    "description": "A three-bedroom White Plains single-family home with two full bathrooms, a fireplace, basement garage and approximately 1,692 square feet of living space.",
+    "features": [
+      "Three bedrooms",
+      "Two full bathrooms",
+      "Fireplace",
+      "Basement garage",
+      "White Plains location"
+    ],
+    "images": [
+      "assets/listings/93-trenton-ave-white-plains-ny/01.webp"
+    ],
+    "sourceUrl": "https://www.realtor.com/realestateandhomes-detail/93-Trenton-Ave_White-Plains_NY_10606_M36865-28637"
+  },
+  {
+    "id": "4-samantha-way-west-nyack-ny",
+    "slug": "4-samantha-way-west-nyack-ny",
+    "address": "4 Samantha Way",
+    "city": "West Nyack",
+    "state": "NY",
+    "zip": "10994",
+    "status": "Sold",
+    "price": 840000,
+    "priceDisplay": "$840,000",
+    "soldDate": "2021-12-06",
+    "beds": 4,
+    "baths": 3,
+    "sqft": 3390,
+    "propertyType": "Single-family residence",
+    "yearBuilt": 1998,
+    "lot": "39,204 sq ft",
+    "garage": "3 cars",
+    "description": "A spacious raised-ranch home in West Nyack with four bedrooms, three bathrooms, central cooling, a fireplace, three-car garage and in-ground pool on approximately 0.9 acres.",
+    "features": [
+      "Four bedrooms",
+      "Three bathrooms",
+      "Raised-ranch design",
+      "Central cooling",
+      "Fireplace",
+      "Three-car garage",
+      "In-ground pool",
+      "Approximately 0.9 acres"
+    ],
+    "images": [
+      "assets/listings/4-samantha-way-west-nyack-ny/01.webp"
+    ],
+    "sourceUrl": "https://www.realtor.com/realestateandhomes-detail/4-Samantha-Way_West-Nyack_NY_10994_M47061-99783"
+  },
+  {
+    "id": "12-knoll-pl-new-rochelle-ny",
+    "slug": "12-knoll-pl-new-rochelle-ny",
+    "address": "12 Knoll Pl",
+    "city": "New Rochelle",
+    "state": "NY",
+    "zip": "10801",
+    "status": "Sold",
+    "price": 515000,
+    "priceDisplay": "$515,000",
+    "soldDate": "2021-11-18",
+    "beds": 3,
+    "baths": 2.5,
+    "fullBaths": 2,
+    "halfBaths": 1,
+    "sqft": 2014,
+    "propertyType": "Single-family residence",
+    "yearBuilt": 1957,
+    "lot": "5,834 sq ft",
+    "description": "A New Rochelle split-level home with three bedrooms, two-and-a-half bathrooms, a finished basement, fireplace, central cooling and attached garage.",
+    "features": [
+      "Three bedrooms",
+      "Two-and-a-half bathrooms",
+      "Split-level design",
+      "Finished basement",
+      "Fireplace",
+      "Central cooling",
+      "Attached garage"
+    ],
+    "images": [
+      "assets/listings/12-knoll-pl-new-rochelle-ny/01.webp"
+    ],
+    "sourceUrl": "https://www.realtor.com/realestateandhomes-detail/12-Knoll-Pl_New-Rochelle_NY_10801_M35920-17132"
+  },
+  {
+    "id": "175-bryant-ave-apt-2a-white-plains-ny",
+    "slug": "175-bryant-ave-apt-2a-white-plains-ny",
+    "address": "175 Bryant Ave Apt 2A",
+    "city": "White Plains",
+    "state": "NY",
+    "zip": "10605",
+    "status": "Sold",
+    "price": 70000,
+    "priceDisplay": "$70,000",
+    "soldDate": "2026-01-28",
+    "beds": 0,
+    "baths": 1,
+    "sqft": 400,
+    "propertyType": "Stock cooperative",
+    "yearBuilt": 1952,
+    "mlsNumber": "OneKeyMLS #922913",
+    "description": "A garden-style studio co-op in Bryant Gardens with an open layout and natural light, positioned near downtown White Plains, Metro-North, shopping, dining and major highways.",
+    "features": [
+      "Studio layout",
+      "Garden-style complex",
+      "Natural light",
+      "Open layout",
+      "Courtyard setting",
+      "Near downtown White Plains",
+      "Near Metro-North"
+    ],
+    "images": [
+      "assets/listings/175-bryant-ave-apt-2a-white-plains-ny/01.jpg"
+    ],
+    "sourceUrl": "https://www.zillow.com/homedetails/175-Bryant-Ave-APT-2A-White-Plains-NY-10605/457291082_zpid/"
   }
 ]
