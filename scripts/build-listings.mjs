@@ -70,7 +70,16 @@ function factsList(listing) {
   if (listing.yearBuilt != null) facts.push(["Year Built", listing.yearBuilt]);
   if (listing.lot) facts.push(["Lot Size", listing.lot]);
   if (listing.hoaMonthly != null) facts.push(["HOA", `$${Number(listing.hoaMonthly).toLocaleString()}/mo`]);
+  if (listing.garage) facts.push(["Garage", listing.garage]);
   if (listing.availability) facts.push(["Availability", listing.availability]);
+  if (listing.soldDate) {
+    const d = new Date(listing.soldDate + "T00:00:00");
+    const label = Number.isNaN(d.getTime())
+      ? listing.soldDate
+      : d.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+    facts.push(["Sold Date", label]);
+  }
+  if (listing.lastSoldYear != null) facts.push(["Last Sold", listing.lastSoldYear]);
   if (listing.status) facts.push(["Status", listing.status]);
   if (listing.mlsNumber) facts.push(["MLS #", listing.mlsNumber]);
   return facts;
@@ -207,7 +216,7 @@ function renderPage(listing) {
 
         <div class="listing-cta-panel">
           ${isSold(listing)
-            ? `<h3>This home has sold</h3>
+            ? `<h3>${String(listing.status || "").toLowerCase() === "off market" ? "This home is off market" : "This home has sold"}</h3>
           <p>Interested in something similar? Amy can help you find comparable homes.</p>
           <div class="hero-ctas">
             <button type="button" class="btn btn-primary" data-inquiry="buy">Find a Similar Home</button>

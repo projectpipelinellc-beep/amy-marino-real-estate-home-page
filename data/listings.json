@@ -19,7 +19,16 @@
     "agent": "Amy Marino",
     "brokerage": "Coldwell Banker Realty",
     "description": "A one-bedroom waterfront condo with a separate den or office, in-unit laundry, central air, stainless-steel appliances and an assigned parking space. Community amenities include pools, fitness and spa facilities, a theater, game room, clubhouse, courts, business center and Hudson River access.",
-    "features": ["Waterfront community", "Den or office", "In-unit laundry", "Central air", "Assigned parking", "Pet friendly", "Pools and fitness center", "Sauna, theater and game room"],
+    "features": [
+      "Waterfront community",
+      "Den or office",
+      "In-unit laundry",
+      "Central air",
+      "Assigned parking",
+      "Pet friendly",
+      "Pools and fitness center",
+      "Sauna, theater and game room"
+    ],
     "images": [
       "assets/listings/1109-round-pointe-dr-haverstraw-ny/01.jpg",
       "assets/listings/1109-round-pointe-dr-haverstraw-ny/02.jpg",
@@ -66,7 +75,16 @@
     "agent": "Amy Marino",
     "brokerage": "Coldwell Banker Realty",
     "description": "A bright one-bedroom condo with a flexible bonus room, high ceilings, storage, central air and in-unit washer and dryer. The building offers recreational and coworking amenities, and the listing is pet friendly for cats.",
-    "features": ["Flex room", "Natural light", "High ceilings", "Central air", "Washer and dryer", "Elevator", "Coworking and recreation amenities", "Cats allowed"],
+    "features": [
+      "Flex room",
+      "Natural light",
+      "High ceilings",
+      "Central air",
+      "Washer and dryer",
+      "Elevator",
+      "Coworking and recreation amenities",
+      "Cats allowed"
+    ],
     "images": [
       "assets/listings/25-leroy-pl-apt-501-new-rochelle-ny/01.jpg",
       "assets/listings/25-leroy-pl-apt-501-new-rochelle-ny/02.jpg",
@@ -106,7 +124,16 @@
     "yearBuilt": 1958,
     "lot": "0.28 acres",
     "description": "A renovated split-level home with hardwood floors, an open eat-in kitchen, quartz counters, a deck and large yard. Additional flexible lower-level and basement space can support an office, guest room, playroom or fitness area.",
-    "features": ["Renovated interior", "Open kitchen", "Quartz counters", "Hardwood floors", "Deck and rear patio", "Large yard", "Two-car garage", "Flexible bonus space"],
+    "features": [
+      "Renovated interior",
+      "Open kitchen",
+      "Quartz counters",
+      "Hardwood floors",
+      "Deck and rear patio",
+      "Large yard",
+      "Two-car garage",
+      "Flexible bonus space"
+    ],
     "images": [
       "assets/listings/171-van-etten-blvd-new-rochelle-ny/01.webp"
     ],
@@ -131,7 +158,16 @@
     "yearBuilt": 2007,
     "hoaMonthly": 575,
     "description": "A smart-technology townhome in the Eastchester school district with hardwood floors, a finished basement, bonus loft, balcony and attached garage. The loft can serve as an office or additional flexible room.",
-    "features": ["Smart-home technology", "Hardwood floors", "Finished basement", "Bonus loft", "Balcony", "Garage", "Central air", "Eastchester school district"],
+    "features": [
+      "Smart-home technology",
+      "Hardwood floors",
+      "Finished basement",
+      "Bonus loft",
+      "Balcony",
+      "Garage",
+      "Central air",
+      "Eastchester school district"
+    ],
     "images": [
       "assets/listings/142-brook-st-a-scarsdale-ny/01.svg"
     ],
@@ -157,7 +193,16 @@
     "yearBuilt": 2004,
     "lot": "6,534 sq ft",
     "description": "A renovated colonial on a corner lot in the Eastchester school district. Features include an open kitchen with Wolf and Bosch appliances, a gas fireplace, primary suite, bonus lower-level space, solar panels, two-car garage and fenced yard.",
-    "features": ["Renovated kitchen", "Wolf and Bosch appliances", "Gas fireplace", "Primary suite", "Solar panels", "Two-car garage", "Fenced yard", "Bonus lower-level space"],
+    "features": [
+      "Renovated kitchen",
+      "Wolf and Bosch appliances",
+      "Gas fireplace",
+      "Primary suite",
+      "Solar panels",
+      "Two-car garage",
+      "Fenced yard",
+      "Bonus lower-level space"
+    ],
     "images": [
       "assets/listings/8-homestead-ave-scarsdale-ny/01.webp"
     ],
@@ -182,10 +227,295 @@
     "yearBuilt": 1988,
     "hoaMonthly": 811,
     "description": "A second-floor Greencroft condominium with a private balcony and views toward Long Island Sound and Pelham Golf Course. Amenities include garage parking, concierge and security services, a fitness center, tennis and pickleball courts, and an outdoor pool.",
-    "features": ["Private balcony", "Water and golf-course views", "Garage parking", "Concierge and security", "Fitness center", "Pool", "Tennis and pickleball", "Near Glen Island Park"],
+    "features": [
+      "Private balcony",
+      "Water and golf-course views",
+      "Garage parking",
+      "Concierge and security",
+      "Fitness center",
+      "Pool",
+      "Tennis and pickleball",
+      "Near Glen Island Park"
+    ],
     "images": [
       "assets/listings/701-pelham-rd-apt-2e-new-rochelle-ny/01.webp"
     ],
     "sourceUrl": "https://www.zillow.com/homedetails/701-Pelham-Rd-APT-2E-New-Rochelle-NY-10805/299044105_zpid/"
+  },
+  {
+    "id": "2241-palmer-ave-apt-1n-new-rochelle-ny",
+    "slug": "2241-palmer-ave-apt-1n-new-rochelle-ny",
+    "address": "2241 Palmer Ave Apt 1N",
+    "city": "New Rochelle",
+    "state": "NY",
+    "zip": "10801",
+    "status": "Sold",
+    "price": 120000,
+    "priceDisplay": "$120,000",
+    "soldDate": "2025-10-24",
+    "beds": 0,
+    "baths": 1,
+    "sqft": 475,
+    "propertyType": "Stock cooperative",
+    "yearBuilt": 1968,
+    "mlsNumber": "OneKeyMLS #899378",
+    "description": "A bright studio co-op in pet-friendly Dorchester Gardens with hardwood floors, a large walk-in closet, an updated kitchen and an assigned parking space. Community amenities include a pool, fitness center, laundry room and outdoor barbecue and seating area.",
+    "features": [
+      "Studio layout",
+      "Hardwood floors",
+      "Walk-in closet",
+      "Assigned parking",
+      "Community pool",
+      "Fitness center",
+      "Pet friendly",
+      "Near Larchmont and New Rochelle transportation"
+    ],
+    "images": [
+      "assets/listings/2241-palmer-ave-apt-1n-new-rochelle-ny/01.jpg"
+    ],
+    "sourceUrl": "https://www.zillow.com/homedetails/2241-Palmer-Ave-APT-1N-New-Rochelle-NY-10801/2132711469_zpid/"
+  },
+  {
+    "id": "6-devon-ct-nanuet-ny",
+    "slug": "6-devon-ct-nanuet-ny",
+    "address": "6 Devon Ct",
+    "city": "Nanuet",
+    "state": "NY",
+    "zip": "10954",
+    "status": "Sold",
+    "price": 545000,
+    "priceDisplay": "$545,000",
+    "soldDate": "2025-11-10",
+    "beds": 2,
+    "baths": 2.5,
+    "sqft": 1324,
+    "propertyType": "Condominium / townhome",
+    "yearBuilt": 1986,
+    "description": "A two-bedroom, two-and-a-half-bath condominium in Nanuet with central air and community pool access.",
+    "features": [
+      "Two bedrooms",
+      "Two-and-a-half baths",
+      "Central air",
+      "Community pool",
+      "Nanuet location"
+    ],
+    "images": [
+      "assets/listings/6-devon-ct-nanuet-ny/01.webp"
+    ],
+    "sourceUrl": "https://www.zillow.com/homedetails/6-Devon-Ct-Nanuet-NY-10954/53406854_zpid/"
+  },
+  {
+    "id": "118-robins-rd-118-new-rochelle-ny",
+    "slug": "118-robins-rd-118-new-rochelle-ny",
+    "address": "118 Robins Rd Unit 118",
+    "city": "New Rochelle",
+    "state": "NY",
+    "zip": "10801",
+    "status": "Sold",
+    "price": 460000,
+    "priceDisplay": "$460,000",
+    "beds": 3,
+    "baths": 3,
+    "fullBaths": 2,
+    "halfBaths": 1,
+    "sqft": 1750,
+    "propertyType": "Stock cooperative / townhome-style duplex",
+    "yearBuilt": 1950,
+    "description": "A bright corner-unit duplex in Pelhamdale Manor with a private entrance, formal dining area, eat-in kitchen, sunroom, hardwood floors, three bedrooms and private attic storage.",
+    "features": [
+      "Corner unit",
+      "Private entrance",
+      "Sunroom",
+      "Formal dining room",
+      "Eat-in kitchen",
+      "Hardwood floors",
+      "Attic storage",
+      "Pet-friendly complex"
+    ],
+    "images": [
+      "assets/listings/118-robins-rd-118-new-rochelle-ny/01.jpg"
+    ],
+    "sourceUrl": "https://www.zillow.com/homedetails/118-Robins-Rd-118-New-Rochelle-NY-10801/454880604_zpid/"
+  },
+  {
+    "id": "24-ronalds-ave-new-rochelle-ny",
+    "slug": "24-ronalds-ave-new-rochelle-ny",
+    "address": "24 Ronalds Ave",
+    "city": "New Rochelle",
+    "state": "NY",
+    "zip": "10801",
+    "status": "Sold",
+    "price": 700000,
+    "priceDisplay": "$700,000",
+    "beds": 4,
+    "baths": 3,
+    "sqft": 1631,
+    "propertyType": "Semi-attached single-family residence",
+    "yearBuilt": 1956,
+    "lot": "3,049 sq ft",
+    "description": "A spacious semi-attached home in Sycamore Park with four bedrooms, three bathrooms and a finished walk-out lower level. Features include hardwood floors, granite kitchen counters, a gas-burning stove, private patio, fenced yard and attached garage.",
+    "features": [
+      "Four bedrooms",
+      "Finished walk-out lower level",
+      "Granite kitchen counters",
+      "Hardwood floors",
+      "Private patio",
+      "Fenced yard",
+      "Attached garage",
+      "Central air"
+    ],
+    "images": [
+      "assets/listings/24-ronalds-ave-new-rochelle-ny/01.jpg"
+    ],
+    "sourceUrl": "https://www.zillow.com/homedetails/24-Ronalds-Ave-New-Rochelle-NY-10801/32958241_zpid/"
+  },
+  {
+    "id": "191-oakland-ave-eastchester-ny",
+    "slug": "191-oakland-ave-eastchester-ny",
+    "address": "191 Oakland Ave",
+    "city": "Eastchester",
+    "state": "NY",
+    "zip": "10709",
+    "status": "Sold",
+    "price": 1975000,
+    "priceDisplay": "$1,975,000",
+    "soldDate": "2024-05-13",
+    "propertyType": "Single-family residence",
+    "lot": "0.26 acres",
+    "description": "A past Eastchester sale recorded as a single-family residence on approximately 0.26 acres.",
+    "features": [
+      "Single-family residence",
+      "Eastchester location",
+      "Approximately 0.26-acre lot"
+    ],
+    "images": [
+      "assets/listings/191-oakland-ave-eastchester-ny/01.svg"
+    ],
+    "photoNote": "The supplied source page exposes only Street View and public-record information; no listing photograph was available, so a branded placeholder is shown instead.",
+    "sourceUrl": "https://www.zillow.com/homedetails/191-Oakland-Ave-Eastchester-NY-10709/33015409_zpid/"
+  },
+  {
+    "id": "107-columbus-ave-apt-2b-west-harrison-ny",
+    "slug": "107-columbus-ave-apt-2b-west-harrison-ny",
+    "address": "107 Columbus Ave Apt 2B",
+    "city": "West Harrison",
+    "state": "NY",
+    "zip": "10604",
+    "status": "Sold",
+    "price": 260000,
+    "priceDisplay": "$260,000",
+    "beds": 2,
+    "baths": 1,
+    "sqft": 900,
+    "propertyType": "Stock cooperative",
+    "yearBuilt": 1952,
+    "description": "A light-filled two-bedroom co-op with an open living area, granite kitchen counters and hardwood floors. Community amenities include a pool, barbecue and picnic area, and vegetable garden.",
+    "features": [
+      "Two bedrooms",
+      "Open-concept living area",
+      "Granite counters",
+      "Hardwood floors",
+      "Community pool",
+      "BBQ and picnic area",
+      "Near downtown White Plains"
+    ],
+    "images": [
+      "assets/listings/107-columbus-ave-apt-2b-west-harrison-ny/01.jpg"
+    ],
+    "sourceUrl": "https://www.zillow.com/homedetails/107-Columbus-Ave-APT-2B-West-Harrison-NY-10604/2122266709_zpid/"
+  },
+  {
+    "id": "1270-north-ave-2m-new-rochelle-ny",
+    "slug": "1270-north-ave-2m-new-rochelle-ny",
+    "address": "1270 North Ave Unit 2M",
+    "city": "New Rochelle",
+    "state": "NY",
+    "zip": "10804",
+    "status": "Sold",
+    "price": 235000,
+    "priceDisplay": "$235,000",
+    "beds": 0,
+    "baths": 1,
+    "sqft": 650,
+    "propertyType": "Condominium",
+    "yearBuilt": 1984,
+    "description": "A renovated studio condominium in Wykagyl with a sleeping alcove, oversized walk-in closet, updated kitchen and bathroom, and assigned parking. Building amenities include a doorman, concierge, fitness room, pool and sauna.",
+    "features": [
+      "Renovated studio",
+      "Sleeping alcove",
+      "Oversized walk-in closet",
+      "Assigned parking",
+      "Doorman and concierge",
+      "Fitness room",
+      "Pool and sauna",
+      "Under 30 minutes to NYC"
+    ],
+    "images": [
+      "assets/listings/1270-north-ave-2m-new-rochelle-ny/01.jpg"
+    ],
+    "sourceUrl": "https://www.zillow.com/homedetails/1270-North-Ave-2M-New-Rochelle-NY-10804/299044254_zpid/"
+  },
+  {
+    "id": "2201-palmer-ave-apt-4p-new-rochelle-ny",
+    "slug": "2201-palmer-ave-apt-4p-new-rochelle-ny",
+    "address": "2201 Palmer Ave Apt 4P",
+    "city": "New Rochelle",
+    "state": "NY",
+    "zip": "10801",
+    "status": "Sold",
+    "price": 165000,
+    "priceDisplay": "$165,000",
+    "beds": 1,
+    "baths": 1,
+    "sqft": 700,
+    "propertyType": "Stock cooperative",
+    "yearBuilt": 1968,
+    "description": "A bright one-bedroom co-op in Palmer Woods with an updated kitchen, hardwood floors, generous closets and assigned parking. The complex offers laundry, storage and bicycle rooms, a barbecue patio and optional gym access.",
+    "features": [
+      "Updated kitchen",
+      "Hardwood floors",
+      "Large bedroom",
+      "Generous closets",
+      "Assigned parking",
+      "BBQ patio",
+      "Near Larchmont and New Rochelle transportation"
+    ],
+    "images": [
+      "assets/listings/2201-palmer-ave-apt-4p-new-rochelle-ny/01.jpg"
+    ],
+    "sourceUrl": "https://www.zillow.com/homedetails/2201-Palmer-Ave-APT-4P-New-Rochelle-NY-10801/2091316634_zpid/"
+  },
+  {
+    "id": "5-meda-pl-white-plains-ny",
+    "slug": "5-meda-pl-white-plains-ny",
+    "address": "5 Meda Pl",
+    "city": "White Plains",
+    "state": "NY",
+    "zip": "10605",
+    "status": "Off Market",
+    "price": 990000,
+    "priceDisplay": "$990,000",
+    "lastSoldYear": 2022,
+    "beds": 5,
+    "baths": 3,
+    "sqft": 2464,
+    "propertyType": "Single-family residence",
+    "yearBuilt": 1961,
+    "lot": "0.25 acres",
+    "garage": "2 cars",
+    "description": "An off-market White Plains single-family property with five bedrooms, three bathrooms, a fireplace, central cooling, a two-car garage and approximately one-quarter acre.",
+    "features": [
+      "Five bedrooms",
+      "Three full bathrooms",
+      "Fireplace",
+      "Central cooling",
+      "Two-car garage",
+      "Approximately 0.25-acre lot"
+    ],
+    "images": [
+      "assets/listings/5-meda-pl-white-plains-ny/01.svg"
+    ],
+    "photoNote": "The supplied source page exposes only Street View and property-record imagery; no listing photograph was available, so a branded placeholder is shown instead.",
+    "sourceUrl": "https://www.realtor.com/realestateandhomes-detail/5-Meda-Pl_White-Plains_NY_10605_M49616-25200"
   }
 ]
