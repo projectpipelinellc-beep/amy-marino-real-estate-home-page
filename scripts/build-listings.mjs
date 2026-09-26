@@ -85,7 +85,7 @@ function factsList(listing) {
   return facts;
 }
 
-function galleryMarkup(listing) {
+function galleryPhotosMarkup(listing) {
   if (!listing.images || listing.images.length === 0) return "";
   return listing.images
     .map((img, i) => {
@@ -98,6 +98,20 @@ function galleryMarkup(listing) {
       );
     })
     .join("\n            ");
+}
+
+function galleryDescMarkup(listing) {
+  if (!listing.description) return "";
+  return (
+    `<div class="listing-gallery-desc">` +
+    `<h2>${escapeHtml(addressLine(listing))}</h2>` +
+    `<p>${escapeHtml(listing.description)}</p>` +
+    `</div>`
+  );
+}
+
+function galleryMarkup(listing) {
+  return [galleryPhotosMarkup(listing), galleryDescMarkup(listing)].filter(Boolean).join("\n            ");
 }
 
 function featuresMarkup(listing) {
