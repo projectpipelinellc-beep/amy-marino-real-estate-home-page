@@ -503,6 +503,37 @@ p {
   margin: 0;
   color: var(--text-muted-on-paper);
 }
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin: 1.75rem 0 0;
+  padding: 1.5rem 0 0;
+  border-top: 1px solid var(--paper-border);
+}
+@media (max-width: 480px) {
+  .about-stats {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+.about-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.about-stat-value {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.6vw, 1.9rem);
+  font-weight: 700;
+  color: var(--text-on-paper);
+}
+.about-stat-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted-on-paper);
+}
 .about-note {
   margin-top: 1.5rem;
   padding: 1rem 1.25rem;
